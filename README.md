@@ -17,6 +17,7 @@ How to use the application (steps) :
 2)	Step 4 : The user can also “deposit” a certain amount of money to the selected address , by inserting in the bottom input a numeric value. (note that I have passed my Token requirement, so this post will likely not go through, but you will be redirected to the homepage. 
 
 
+video tutorial : https://drive.google.com/file/d/1A7EEYfH86_AB3gwyohlNJOQHltoT_9iR/view
 
 
 Technologies used : Javascript, CSS, Chart.js, Node.js, Mysql
