@@ -11,8 +11,6 @@
 <body>
     <div class="chart">
         <canvas id="myChart"></canvas>
-    
-
 
     <form class="form" action='/save' method="POST">
         <label for="payment">Keep track of this address ? </label>
@@ -23,8 +21,12 @@
         <input type="hidden" name='finalBalance' value=<%= finalBalance %> />
         <button class="coinButton" type="submit">Save Information</button>
     </form>
-</div>
 
+    
+</div>
+<form class="form" action='/' method="GET">
+    <button  class="coinButton" type="submit">Back to Home</button>
+</form>
     <script> 
     
     let balance = <%= balance %>;

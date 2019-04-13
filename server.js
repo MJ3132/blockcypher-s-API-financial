@@ -5,6 +5,7 @@ const sequelize = require('./util/dbConnection');
 const Sequelize = require('sequelize');
 const path = require('path');
 
+// middleware to parse incoming data to the routes
 const bodyParser = require("body-parser");
 const ejs = require('ejs');
 require('dotenv').config();

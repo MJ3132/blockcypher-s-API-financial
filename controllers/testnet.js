@@ -5,10 +5,6 @@ const TOKEN = process.env.TOKEN;
 // get coins from the testfaucet
 
 module.exports.getAddress = (req, res, next) => {
-    // let address = req.body.address;
-
-    console.log(req.body);
-
 
     if (req.body.address) {
         address = req.body.address;
@@ -22,10 +18,8 @@ module.exports.getAddress = (req, res, next) => {
         const transactions = response.data.txrefs[0];
         const balance = response.data.balance;
         //  console.log(balance);
-
         //  console.log(transactions)
         res.render('index', { balance: balance, address: address });
-
     })
         .catch(err => {
             console.log(err);
@@ -72,7 +66,6 @@ module.exports.details = (req, res, next) => {
         const totalSent = response.data.total_sent;
         const finalBalance = response.data.final_balance;
 
-
         res.render('chart', {
             address: address,
             balance: balance,
@@ -81,11 +74,10 @@ module.exports.details = (req, res, next) => {
             finalBalance: finalBalance
         });
 
-
     })
         .catch(err => {
             console.log(err);
-        })
+        });
 
 }
 
@@ -98,7 +90,6 @@ module.exports.save = (req, res, next) => {
         totalReceived,
         totalSent,
         finalBalance } = req.body;
-
 
     let data = {
         address: address,
@@ -117,8 +108,7 @@ module.exports.save = (req, res, next) => {
         })
         .catch(err => {
             console.log(err);
-        })
-
+        });
 }
 
 

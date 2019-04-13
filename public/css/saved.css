@@ -18,3 +18,25 @@ body {
     height: 400px;
 
 }
+
+
+.coinButton{
+    width: 150px;
+    height: 40px;
+    padding:5px;
+    display:flex;
+    justify-content: center;    
+     background: lightseagreen;
+    border:1px solid lightseagreen;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-transform: uppercase;
+
+    margin:5px;
+    border-radius:5%;
+    opacity:none;
+}
+
+.coinButton:hover{
+     background: sandybrown;
+    color: black;
+}
