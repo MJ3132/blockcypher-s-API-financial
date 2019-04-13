@@ -1,0 +1,25 @@
+{
+  "name": "coding-challenge-markdalefinancial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "chart.js": "^2.8.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "msql": "^1.0.3",
+    "mysql2": "^1.6.5",
+    "sequelize": "^5.3.1"
+  },
+  "devDependencies": {
+    "dotenv": "^7.0.0"
+  }
+}

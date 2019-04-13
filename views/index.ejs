@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/homepage.css" />
+    <!-- <script src="main.js"></script>  -->
+</head>
+<body>
+  
+   <div class="title"> <h1>Markdale Financial Challenge</h1></div>
+    <main class='transaction-container'>
+        
+        <div class="transactions" scroll="hidden" >
+            <label for="address">Enter address to get balance</label>
+            <br/>
+            <form class="form" action='/get-address' method="POST">
+ 
+            <input class="addressInput" type="text" placeholder="Enter Testnet Address" name="address" />
+            <button class="coinButton" type="submit">Submit</button>
+            <button style="height:45px" class="coinButton">Random Address</button>
+            </form>
+            <div>
+                 
+                <% if (balance) { %>
+                    <div style="display:flex; justify-content:left; align-items:center; margin:5px 0px">
+                        
+                         <p style="margin:5px">Address balance : <%= balance %></p>
+                            <form class="form" action='/details' method="POST">
+                         <input type="hidden" name='address' value=<%=address %> />
+                        <button class=<% balance  ? "display:block; margin:5px" : "display:hidden"%>>Details</button>
+                        </form>
+                        
+
+                            <% } else { %>
+                            
+                            <!-- <p>Address Balance : Not Found</p>  -->
+                        
+                                 <div class="lds-circle">
+                                    <div style="height:90px"; "width:130px"><img class="img"src="https://cdn1.iconfinder.com/data/icons/flat-world-currency-1/432/Flat_Currency_Bitcoin-512.png"></div>
+                                        </div>
+                                
+                                <% } %> 
+
+                            </div>
+
+                            <form style="margin-top:2%" class="form" action='/pay' method="POST">
+                                <label for="payment"> Pay to this address?</label>
+                                <input type="text" placeholder="Bitcoin amount" name="payment" />
+                                <input type="hidden" name='address'value= <%= address %> />
+                                
+                                <button  class="coinButton" type="submit">Submit</button>
+                            </form>
+                        
+            </div>
+        </div>
+    </main>
+    
+</body>
+</html>

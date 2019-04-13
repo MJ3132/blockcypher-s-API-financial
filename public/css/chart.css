@@ -1,0 +1,45 @@
+body {
+  
+    /* background: #a9a9a9; */
+    
+    margin:0 20%;
+      background-image: linear-gradient(to right, darkCyan, lightgray, darkgrey);
+
+}
+
+.chart {
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.coinButton{
+    width: 150px;
+    height: 30px;
+    padding:5px;
+    display:flex;
+    justify-content: center;    
+    background: lightseagreen;
+    border:1px solid lightseagreen;
+    margin:5px;
+}
+
+.coinButton:hover{
+    background: sandybrown;
+    color: white;
+}
+
+
+     @media screen and (max-width:1000px){
+         body{
+             margin : 2%;
+         }
+
+#myChart{
+    width:100%;
+    height:100%;
+   
+}
+    }

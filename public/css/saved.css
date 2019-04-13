@@ -1,0 +1,20 @@
+body {
+    box-sizing: border-box;
+     background-image: linear-gradient(to right, darkCyan, lightgray, darkgrey);
+    margin: 0 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.form {
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin:5px;
+    height: 400px;
+
+}
