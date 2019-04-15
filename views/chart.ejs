@@ -9,7 +9,10 @@
 <link rel="stylesheet" type="text/css" media="screen" href="/css/chart.css" />   
 </head>
 <body>
-    <div class="chart">
+    <form style="display:flex; justify-content:right" action='/' method="GET">
+        <button class="coinButton" type="submit">Back to Home</button>
+    </form>
+    <div class="chart-container">
         <canvas id="myChart"></canvas>
 
     <form class="form" action='/save' method="POST">
@@ -24,9 +27,7 @@
 
     
 </div>
-<form class="form" action='/' method="GET">
-    <button  class="coinButton" type="submit">Back to Home</button>
-</form>
+
     <script> 
     
     let balance = <%= balance %>;
