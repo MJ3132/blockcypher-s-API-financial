@@ -4,6 +4,7 @@ const axios = require('axios');
 
 const db = require('../models');
 const TOKEN = process.env.TOKEN;
+
 // get coins from the testfaucet
 
 module.exports.getAddress = (req, res, next) => {
