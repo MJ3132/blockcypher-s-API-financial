@@ -1,14 +1,12 @@
 const axios = require('axios');
-const Sequelize = require('sequelize');
-const addressDb = require('../models/address');
+// const Sequelize = require('sequelize');
+// const addressDb = require('../models/address');
+
+const db = require('../models');
 const TOKEN = process.env.TOKEN;
 // get coins from the testfaucet
 
 module.exports.getAddress = (req, res, next) => {
-    // let address = req.body.address;
-
-    console.log(req.body);
-
 
     if (req.body.address) {
         address = req.body.address;
@@ -22,10 +20,8 @@ module.exports.getAddress = (req, res, next) => {
         const transactions = response.data.txrefs[0];
         const balance = response.data.balance;
         //  console.log(balance);
-
         //  console.log(transactions)
         res.render('index', { balance: balance, address: address });
-
     })
         .catch(err => {
             console.log(err);
@@ -72,7 +68,6 @@ module.exports.details = (req, res, next) => {
         const totalSent = response.data.total_sent;
         const finalBalance = response.data.final_balance;
 
-
         res.render('chart', {
             address: address,
             balance: balance,
@@ -81,11 +76,10 @@ module.exports.details = (req, res, next) => {
             finalBalance: finalBalance
         });
 
-
     })
         .catch(err => {
             console.log(err);
-        })
+        });
 
 }
 
@@ -99,7 +93,6 @@ module.exports.save = (req, res, next) => {
         totalSent,
         finalBalance } = req.body;
 
-
     let data = {
         address: address,
         balance: balance,
@@ -109,16 +102,16 @@ module.exports.save = (req, res, next) => {
     }
 
     // console.log(data);
+    // lower case model is the name we gave it
 
-    addressDb.create(data)
+    db.Transaction.create(data)
         .then(response => {
             console.log(response);
             res.render('saved');
         })
         .catch(err => {
             console.log(err);
-        })
-
+        });
 }
 
 

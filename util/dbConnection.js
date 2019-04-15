@@ -1,8 +1,10 @@
 const Sequelize = require('sequelize');
-
+// const DB = process.env.DB;
 
 // configuring a connection to the mysql database
-const sequelize = new Sequelize('markdale', 'root', 'password',{
+
+//TODO change password on the empty string =======>
+const sequelize = new Sequelize('markdale', 'root','password',{
     dialect: 'mysql',
     host:'localhost'
 
