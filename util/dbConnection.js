@@ -4,7 +4,7 @@ const Sequelize = require('sequelize');
 // configuring a connection to the mysql database
 
 //TODO change password on the empty string =======>
-const sequelize = new Sequelize('markdale', 'root','password',{
+const sequelize = new Sequelize('markdale', 'root','',{
     dialect: 'mysql',
     host:'localhost'
 
