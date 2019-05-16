@@ -27,19 +27,17 @@
 
     
 </div>
-
-    
 </div>
-<form class="form" action='/' method="GET">
-    <button  class="coinButton" type="submit">Back to Home</button>
-</form>
+
     <script> 
     
     let balance = <%= balance %>;
     let totalReceived = <%= totalReceived %>;
     let totalSent = <%= totalSent %>;
     let finalBalance = <%= finalBalance %>;
+    // let transactions = <%= transactions %>;
 
+    // transactions.map(ref => console.log(ref.value));
    console.log(finalBalance);
     let myChart = document.getElementById('myChart').getContext('2d');
 
@@ -56,11 +54,14 @@
         
                 data:[balance,totalReceived,totalSent,finalBalance],
 
+                // data: [transactions],
+
                 backgroundColor:[
                     'gold',
                     'red',
                     'purple',
-                    "salmon"
+                    "salmon",
+               
             ],
             borderWidth:1,
             borderColor:'#777',

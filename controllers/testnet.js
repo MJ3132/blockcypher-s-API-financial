@@ -16,12 +16,12 @@ module.exports.getAddress = (req, res, next) => {
     }
 
     axios.get(`https://api.blockcypher.com/v1/btc/test3/addrs/${address}`).then(response => {
-        console.log(response);
+    
 
-        const transactions = response.data.txrefs[0];
+    
         const balance = response.data.balance;
         //  console.log(balance);
-        //  console.log(transactions)
+     
         res.render('index', { balance: balance, address: address });
     })
         .catch(err => {
@@ -60,21 +60,24 @@ module.exports.details = (req, res, next) => {
     } else {
         address = "2NGZrVvZG92qGYqzTLjCAewvPZ7JE8S8VxE"
     }
-    axios.get(`https://api.blockcypher.com/v1/btc/test3/addrs/${address}`).then(response => {
+    axios.get(`https://api.blockcypher.com/v1/btc/test3/addrs/${address}?limit=20`).then(response => {
         console.log(response);
 
-        let transactions = response.data;
+        const transactions = response.data.txrefs;
         const balance = response.data.balance;
         const totalReceived = response.data.total_received;
         const totalSent = response.data.total_sent;
         const finalBalance = response.data.final_balance;
+
+        console.log(transactions);
 
         res.render('chart', {
             address: address,
             balance: balance,
             totalReceived: totalReceived,
             totalSent: totalSent,
-            finalBalance: finalBalance
+            finalBalance: finalBalance,
+            transactions : transactions
         });
 
     })
